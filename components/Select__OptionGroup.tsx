@@ -2,7 +2,7 @@ import * as React from "react";
 import {
   PlasmicSelect__OptionGroup,
   DefaultSelect__OptionGroupProps
-} from "./plasmic/style_in_form/PlasmicSelect__OptionGroup";
+} from "./plasmic/copy_of_medusa_js_plasmic_demo_store/PlasmicSelect__OptionGroup";
 
 export interface Select__OptionGroupProps
   extends DefaultSelect__OptionGroupProps {

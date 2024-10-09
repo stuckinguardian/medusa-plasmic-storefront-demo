@@ -2,9 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/style_in_form/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/style_in_form/PlasmicGlobalVariant__Screen";
-import { PlasmicCart } from "../components/plasmic/style_in_form/PlasmicCart";
+import GlobalContextsProvider from "../components/plasmic/copy_of_medusa_js_plasmic_demo_store/PlasmicGlobalContextsProvider";
+
+import { PlasmicCart } from "../components/plasmic/copy_of_medusa_js_plasmic_demo_store/PlasmicCart";
 import { useRouter } from "next/router";
 
 function Cart() {

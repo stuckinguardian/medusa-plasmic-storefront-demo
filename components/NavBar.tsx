@@ -4,7 +4,7 @@ import * as React from "react";
 import {
   PlasmicNavBar,
   DefaultNavBarProps
-} from "./plasmic/style_in_form/PlasmicNavBar";
+} from "./plasmic/copy_of_medusa_js_plasmic_demo_store/PlasmicNavBar";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 // Your component props start with props for variants and slots you defined

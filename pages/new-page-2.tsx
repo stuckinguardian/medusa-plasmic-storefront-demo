@@ -2,9 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/style_in_form/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/style_in_form/PlasmicGlobalVariant__Screen";
-import { PlasmicNewPage2 } from "../components/plasmic/style_in_form/PlasmicNewPage2";
+import GlobalContextsProvider from "../components/plasmic/copy_of_medusa_js_plasmic_demo_store/PlasmicGlobalContextsProvider";
+
+import { PlasmicNewPage2 } from "../components/plasmic/copy_of_medusa_js_plasmic_demo_store/PlasmicNewPage2";
 import { useRouter } from "next/router";
 
 function NewPage2() {

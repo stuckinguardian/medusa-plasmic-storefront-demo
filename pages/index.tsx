@@ -2,19 +2,12 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PageParamsProvider as PageParamsProvider__ } from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/style_in_form/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/style_in_form/PlasmicGlobalVariant__Screen";
-import { PlasmicHomepage } from "../components/plasmic/style_in_form/PlasmicHomepage";
+import GlobalContextsProvider from "../components/plasmic/copy_of_medusa_js_plasmic_demo_store/PlasmicGlobalContextsProvider";
+
+import { PlasmicHomepage } from "../components/plasmic/copy_of_medusa_js_plasmic_demo_store/PlasmicHomepage";
 import { useRouter } from "next/router";
-import { GetStaticProps } from "next";
-import { extractPlasmicQueryData } from "@plasmicapp/react-web/lib/prepass";
-import { PlasmicQueryDataProvider } from "@plasmicapp/react-web/lib/query";
 
-interface HomepageProps {
-  queryCache: Record<string, any>;
-}
-
-function Homepage(props: HomepageProps) {
+function Homepage() {
   // Use PlasmicHomepage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -31,30 +24,17 @@ function Homepage(props: HomepageProps) {
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
-
   return (
-    <PlasmicQueryDataProvider prefetchedCache={props.queryCache}>
-      <GlobalContextsProvider>
-        <PageParamsProvider__
-          route={useRouter()?.pathname}
-          params={useRouter()?.query}
-          query={useRouter()?.query}
-        >
-          <PlasmicHomepage />
-        </PageParamsProvider__>
-      </GlobalContextsProvider>
-    </PlasmicQueryDataProvider>
+    <GlobalContextsProvider>
+      <PageParamsProvider__
+        route={useRouter()?.pathname}
+        params={useRouter()?.query}
+        query={useRouter()?.query}
+      >
+        <PlasmicHomepage />
+      </PageParamsProvider__>
+    </GlobalContextsProvider>
   );
 }
 
 export default Homepage;
-
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  // Cache the necessary data fetched for the page
-  const queryCache = await extractPlasmicQueryData(
-    <PlasmicHomepage />
-  );
-  // Use revalidate if you want incremental static regeneration
-  return { props: { queryCache }, revalidate: 60 };
-}
